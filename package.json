@@ -19,7 +19,7 @@
     "watch": "parcel watch",
     "build": "parcel build",
     "version:prerelease": "yarn version --prerelease --preid canary",
-    "publish:prerelease": "yarn run build && yarn run login && yarn publish --tag canary"
+    "publish:prerelease": "yarn run build && yarn login && yarn publish --tag canary"
   },
   "devDependencies": {
     "eslint": "^8.11.0",
