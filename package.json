@@ -16,6 +16,7 @@
   "source": "src/index.js",
   "main": "dist/main.js",
   "scripts": {
+    "dev": "parcel dev/index.html",
     "watch": "parcel watch",
     "build": "parcel build",
     "version:prerelease": "yarn version --prerelease --preid canary",

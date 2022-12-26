@@ -1,5 +1,5 @@
 import MiniGl from './MiniGl'
-import { normalizeColor, e } from './utils'
+import { normalizeColor, setInitialProperty } from './utils'
 
 /*
 *Finally initializing the Gradient class, assigning a canvas to it and calling Gradient.connect() which initializes everything,
@@ -18,52 +18,52 @@ import { normalizeColor, e } from './utils'
 //Gradient object
 class Gradient {
     constructor(...t) {
-        e(this, 'el', void 0),
-        e(this, 'cssVarRetries', 0),
-        e(this, 'maxCssVarRetries', 200),
-        e(this, 'angle', 0),
-        e(this, 'isLoadedClass', !1),
-        e(this, 'isScrolling', !1),
-        /*e(this, "isStatic", o.disableAmbientAnimations()),*/ e(this, 'scrollingTimeout', void 0),
-        e(this, 'scrollingRefreshDelay', 200),
-        e(this, 'isIntersecting', !1),
-        e(this, 'shaderFiles', void 0),
-        e(this, 'vertexShader', void 0),
-        e(this, 'sectionColors', void 0),
-        e(this, 'computedCanvasStyle', void 0),
-        e(this, 'conf', void 0),
-        e(this, 'uniforms', void 0),
-        e(this, 't', 1253106),
-        e(this, 'last', 0),
-        e(this, 'width', void 0),
-        e(this, 'minWidth', 1111),
-        e(this, 'height', 600),
-        e(this, 'xSegCount', void 0),
-        e(this, 'ySegCount', void 0),
-        e(this, 'mesh', void 0),
-        e(this, 'material', void 0),
-        e(this, 'geometry', void 0),
-        e(this, 'minigl', void 0),
-        e(this, 'scrollObserver', void 0),
-        e(this, 'amp', 320),
-        e(this, 'seed', 5),
-        e(this, 'freqX', 14e-5),
-        e(this, 'freqY', 29e-5),
-        e(this, 'freqDelta', 1e-5),
-        e(this, 'activeColors', [1, 1, 1, 1]),
-        e(this, 'isMetaKey', !1),
-        e(this, 'isGradientLegendVisible', !1),
-        e(this, 'isMouseDown', !1),
-        e(this, 'handleScroll', () => {
+        setInitialProperty(this, 'el', void 0),
+        setInitialProperty(this, 'cssVarRetries', 0),
+        setInitialProperty(this, 'maxCssVarRetries', 200),
+        setInitialProperty(this, 'angle', 0),
+        setInitialProperty(this, 'isLoadedClass', !1),
+        setInitialProperty(this, 'isScrolling', !1),
+        /*setInitialProperty(this, "isStatic", o.disableAmbientAnimations()),*/ setInitialProperty(this, 'scrollingTimeout', void 0),
+        setInitialProperty(this, 'scrollingRefreshDelay', 200),
+        setInitialProperty(this, 'isIntersecting', !1),
+        setInitialProperty(this, 'shaderFiles', void 0),
+        setInitialProperty(this, 'vertexShader', void 0),
+        setInitialProperty(this, 'sectionColors', void 0),
+        setInitialProperty(this, 'computedCanvasStyle', void 0),
+        setInitialProperty(this, 'conf', void 0),
+        setInitialProperty(this, 'uniforms', void 0),
+        setInitialProperty(this, 't', 1253106),
+        setInitialProperty(this, 'last', 0),
+        setInitialProperty(this, 'width', void 0),
+        setInitialProperty(this, 'minWidth', 1111),
+        setInitialProperty(this, 'height', 600),
+        setInitialProperty(this, 'xSegCount', void 0),
+        setInitialProperty(this, 'ySegCount', void 0),
+        setInitialProperty(this, 'mesh', void 0),
+        setInitialProperty(this, 'material', void 0),
+        setInitialProperty(this, 'geometry', void 0),
+        setInitialProperty(this, 'minigl', void 0),
+        setInitialProperty(this, 'scrollObserver', void 0),
+        setInitialProperty(this, 'amp', 320),
+        setInitialProperty(this, 'seed', 5),
+        setInitialProperty(this, 'freqX', 14e-5),
+        setInitialProperty(this, 'freqY', 29e-5),
+        setInitialProperty(this, 'freqDelta', 1e-5),
+        setInitialProperty(this, 'activeColors', [1, 1, 1, 1]),
+        setInitialProperty(this, 'isMetaKey', !1),
+        setInitialProperty(this, 'isGradientLegendVisible', !1),
+        setInitialProperty(this, 'isMouseDown', !1),
+        setInitialProperty(this, 'handleScroll', () => {
             clearTimeout(this.scrollingTimeout),
             (this.scrollingTimeout = setTimeout(this.handleScrollEnd, this.scrollingRefreshDelay)),
             this.isGradientLegendVisible && this.hideGradientLegend(),
-            this.conf.playing && ((this.isScrolling = !0), this.pause())
+            this.conf.playing && ((this.isScrolling = !0), this.paussetInitialProperty())
         }),
-        e(this, 'handleScrollEnd', () => {
+        setInitialProperty(this, 'handleScrollEnd', () => {
             ;(this.isScrolling = !1), this.isIntersecting && this.play()
         }),
-        e(this, 'resize', () => {
+        setInitialProperty(this, 'resize', () => {
             ;(this.width = window.innerWidth),
             this.minigl.setSize(this.width, this.height),
             this.minigl.setOrthographicCamera(),
@@ -73,14 +73,14 @@ class Gradient {
             this.mesh.geometry.setSize(this.width, this.height),
             (this.mesh.material.uniforms.u_shadow_power.value = this.width < 600 ? 5 : 6)
         }),
-        e(this, 'handleMouseDown', (e) => {
+        setInitialProperty(this, 'handleMouseDown', (e) => {
             this.isGradientLegendVisible &&
             ((this.isMetaKey = e.metaKey), (this.isMouseDown = !0), !1 === this.conf.playing && requestAnimationFrame(this.animate))
         }),
-        e(this, 'handleMouseUp', () => {
+        setInitialProperty(this, 'handleMouseUp', () => {
             this.isMouseDown = !1
         }),
-        e(this, 'animate', (e) => {
+        setInitialProperty(this, 'animate', (e) => {
             if (!this.shouldSkipFrame(e) || this.isMouseDown) {
             if (((this.t += Math.min(e - this.last, 1e3 / 15)), (this.last = e), this.isMouseDown)) {
                 let e = 160
@@ -95,7 +95,7 @@ class Gradient {
             )
             ;(this.conf.playing || this.isMouseDown) && requestAnimationFrame(this.animate)
         }),
-        e(this, 'addIsLoadedClass', () => {
+        setInitialProperty(this, 'addIsLoadedClass', () => {
             /*this.isIntersecting && */ !this.isLoadedClass &&
             ((this.isLoadedClass = !0),
             this.el.classList.add('isLoaded'),
@@ -103,13 +103,13 @@ class Gradient {
                 this.el.parentElement.classList.add('isLoaded')
             }, 3e3))
         }),
-        e(this, 'pause', () => {
+        setInitialProperty(this, 'pause', () => {
             this.conf.playing = false
         }),
-        e(this, 'play', () => {
+        setInitialProperty(this, 'play', () => {
             requestAnimationFrame(this.animate), (this.conf.playing = true)
         }),
-        e(this, 'initGradient', (selector) => {
+        setInitialProperty(this, 'initGradient', (selector) => {
             this.el = document.querySelector(selector)
             this.connect()
             return this

@@ -11,7 +11,7 @@ function normalizeColor(hexCode) {
   )
 
   //Sets initial properties
-  function e(object, propertyName, val) {
+  function setInitialProperty(object, propertyName, val) {
     return (
       propertyName in object
         ? Object.defineProperty(object, propertyName, {
@@ -25,4 +25,4 @@ function normalizeColor(hexCode) {
     )
   }
 
-  export { normalizeColor, e }
+  export { normalizeColor, setInitialProperty }
