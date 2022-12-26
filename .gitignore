@@ -1,0 +1,18 @@
+## Numerous always-ignore extensions
+*.diff
+*.err
+*.log
+*.orig
+*.rej
+*.swo
+*.swp
+*.vi
+*.zip
+*.DS_Store
+*~
+
+## Other
+.vscode
+node_modules/
+dist/
+.parcel-cache

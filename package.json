@@ -1,0 +1,19 @@
+{
+  "name": "stripe-gradient",
+  "version": "1.0.0",
+  "author": "Kyle Hasty <contact@kylehasty.com>",
+  "description": "Stripe WebGl Gradient Animation",
+  "license": "MIT",
+  "source": "src/index.js",
+  "main": "dist/main.js",
+  "scripts": {
+    "watch": "parcel watch",
+    "build": "parcel build"
+  },
+  "devDependencies": {
+    "eslint": "^8.11.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-import": "^2.25.2",
+    "parcel": "^2.8.2"
+  }
+}
