@@ -1,13 +1,17 @@
 {
   "name": "stripe-gradient",
-  "version": "1.0.0",
+  "version": "1.0.1-canary.0",
   "author": "Kyle Hasty <contact@kylehasty.com>",
   "description": "Stripe WebGl Gradient Animation",
   "repository": {
     "type": "git",
     "url": "https://github.com/khasty720/stripe-gradient.git"
   },
-  "keywords": ["WebGl", "Stripe", "gradient"],
+  "keywords": [
+    "WebGl",
+    "Stripe",
+    "gradient"
+  ],
   "license": "MIT",
   "source": "src/index.js",
   "main": "dist/main.js",
