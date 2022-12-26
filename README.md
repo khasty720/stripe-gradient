@@ -34,3 +34,10 @@ All Credits to Stripe.com
   --gradient-color-4: #0f3b5e;
 }
 ```
+
+## Local Dev
+
+```sh
+yarn install
+yarn dev
+```
