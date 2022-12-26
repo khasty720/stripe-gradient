@@ -8,6 +8,7 @@
 *.swp
 *.vi
 *.zip
+*.env
 *.DS_Store
 *~
 
@@ -16,3 +17,4 @@
 node_modules/
 dist/
 .parcel-cache
+
