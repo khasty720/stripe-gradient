@@ -346,4 +346,4 @@
     }
   }
 
-  export default Gradient
+  export default MiniGl
