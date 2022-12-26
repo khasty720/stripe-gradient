@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "author": "Kyle Hasty <contact@kylehasty.com>",
   "description": "Stripe WebGl Gradient Animation",
+  "keywords": ["WebGl", "Stripe", "gradient"],
   "license": "MIT",
   "source": "src/index.js",
   "main": "dist/main.js",
